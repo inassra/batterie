@@ -1,5 +1,4 @@
 # batterie
-
 ### II) Développement du PCB
 ##### A) Régulateur linéaire
 ###### Pourquoi?
@@ -21,7 +20,7 @@ ce régulateur un 5V au lieu de 6V. Ainsi, on minimise la différence de tension
 entrée et sa sortie. De plus, concernant le courant; le régulateur choisi ne fournit que 300mA
 et on ne consomme 100mA maximum.
 On choisit alors:
-![]()
+![](reglin.png)
 
 
 
