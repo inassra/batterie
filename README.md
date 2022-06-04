@@ -37,6 +37,11 @@ En se référant sur la datasheet du NCV33375:
 
 ![](images/datareglin.png)
 
+L’une des caractéristiques de ce régulateur est:
+
+-Les deux condensateurs Cin et Cout servent à linéariser respectivement la tension d’entrée et de sortie.
+
+-Si la pin ON/OFF reste flottante alors le régulateur ne marche pas, il est nécessaire de lui appliquer une tension. Pour éviter toute contrainte, on relie cette pin à Vin.  
 
 
 
