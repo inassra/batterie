@@ -20,8 +20,20 @@ ce régulateur un 5V au lieu de 6V. Ainsi, on minimise la différence de tension
 entrée et sa sortie. De plus, concernant le courant; le régulateur choisi ne fournit que 300mA
 et on ne consomme 100mA maximum.
 On choisit alors:
+
 ![](images/reglin.png)
 
+Ainsi grâce à ce choix: 
+  -Le régulateur nous délivre une tension de sortie de 3,3V pour alimenter les différents composants.
+
+  -Il nous délivre un courant de 300mA suffisant (sachant que la STM32 consomme du 50mA; l'accéléromètre du 3,9mA; et le GPS un courant inférieur à 25mA).
+
+  -On a eu une livraison rapide vu que le composant était en stock.
+
+  -On a optimisé de l’espace vu que ce régulateur ne nécessite pas beaucoup de composants contrairement au BUCK.
+
+###### Alimentation:
+En se référant sur la datasheet du NCV33375:
 
 
 
