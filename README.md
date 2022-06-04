@@ -71,4 +71,7 @@ NB : Avoir de bons yeux pour souder les résistances en 0603 :)
 
 ##### B) résultat du 6V
 
+![](images/resultat6V.png)
+
+En alimentant notre PCB avec les 4 piles AAA, soit 6V, nous avons bien obtenu les tensions de sorties souhaitées. 
 ##### C) résultat du 12V 
