@@ -51,3 +51,6 @@ L’une des caractéristiques de ce régulateur est:
 En suivant la datasheet de chaque régulateur et avec quelques recherches, nous avons réalisé notre PCB sous Eagle et une fois reçu l’avons soudé.
 
 ![](images/PCB.png)
+
+En vert le régulateur BUCK
+En orange le régulateur linéaire
