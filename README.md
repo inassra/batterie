@@ -53,4 +53,5 @@ En suivant la datasheet de chaque régulateur et avec quelques recherches, nous 
 ![](images/PCB.png)
 
 En vert le régulateur BUCK
+
 En orange le régulateur linéaire
