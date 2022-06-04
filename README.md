@@ -55,3 +55,17 @@ En suivant la datasheet de chaque régulateur et avec quelques recherches, nous 
 En vert le régulateur BUCK
 
 En orange le régulateur linéaire
+
+
+###### Nos erreurs : 
+
+Ne pas omettre le plan de masse sur Eagle
+
+Prêter attention à la largeur des pistes car la machine de l’Ensea ne peut en faire des trop petites. C’est pourquoi le premier PCB n’était pas exploitable 
+
+Le via a proximité des pins SV1 n’était pas connecté au plan de masse; on a soudé un fil entre le via et celui-ci. 
+
+Ne pas confondre Masse et Terre 
+
+NB : Avoir de bons yeux pour souder les résistances en 0603 :) 
+
