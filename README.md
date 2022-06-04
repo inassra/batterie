@@ -35,7 +35,7 @@ Ainsi grâce à ce choix:
 ###### Alimentation:
 En se référant sur la datasheet du NCV33375:
 
-
+![](images/datareglin.png)
 
 
 
