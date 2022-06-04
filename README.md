@@ -1,6 +1,7 @@
 # batterie
 ### II) Développement du PCB
-##### A) Régulateur linéaire
+##### A) Régulateur Buck
+##### B) Régulateur linéaire
 ###### Pourquoi?
 Tout comme le montre le cahier des charges du travailleur isolé, on a besoin d’alimenter la
 carte STM32 ainsi que les deux capteurs GPS et Accéléromètre avec une tension de 3,3V.
@@ -43,5 +44,8 @@ L’une des caractéristiques de ce régulateur est:
 
 -Si la pin ON/OFF reste flottante alors le régulateur ne marche pas, il est nécessaire de lui appliquer une tension. Pour éviter toute contrainte, on relie cette pin à Vin.  
 
+##### C)Points Tests
 
-
+### III) Résultats:
+##### A) PCB de l’alimentation 
+En suivant la datasheet de chaque régulateur et avec quelques recherches, nous avons réalisé notre PCB sous Eagle et une fois reçu l’avons soudé. 
