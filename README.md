@@ -69,3 +69,6 @@ Ne pas confondre Masse et Terre
 
 NB : Avoir de bons yeux pour souder les résistances en 0603 :) 
 
+##### B) résultat du 6V
+
+##### C) résultat du 12V 
