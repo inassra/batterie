@@ -68,9 +68,9 @@ C'est avec ces renseignements que nous avons pu choisir les piles ou batteries u
 
 L'avantage de notre projet actuel est que l'on a utilisé des piles non rechargeables qui nous délivraient les 6V voulus, tandis que les piles rechargeables, elles ne peuvent délivrer que 1,2V chacune ce qui ne fera pas exactement 6V en tension d'entrée. Cependant, qui dit piles non rechargeables dis moins d'autonomie; ce qui ne coincidera pas avec les attentes de l'acheteur si l'on commercialise le projet.
 
-12V pour plus d'autonomie
+12V pour plus d'autonomie(contrainte de poids)
 
-
+NB:Il est possible d'utiliser des piles rechargeables qui pourront delivrer du 4,8V (4 * 1,2V vu qu'on utilise un boitier pour 4 piles) mais dans ce cas on est obligé d'utiliser un régulateur BOOST afin de faire augmenter la tension jusqu'à 5V.
 ### II) Développement du PCB
 ##### A) Régulateur Buck
 ##### Pourquoi ? 
