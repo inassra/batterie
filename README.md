@@ -1,4 +1,32 @@
-# batterie
+# Rachidi Inass, Cottar Manon
+
+# Projet Batterie
+# Sommaire 
+### Introdcution
+### I) L'alimentation
+##### A) Cahier des charges
+##### B) Piles et batterie 
+### II) Développement du PCB
+##### A) Régulateur Buck
+##### B) Régulateur linéaire
+##### C)Points Tests
+### III) Les résultats
+##### A) PCB de l’alimentation
+##### B) Résultat du 6V
+##### C) Résultat du 12V
+### IV) Remarques 
+##### A) Les chiffres
+##### B) Nos erreurs
+### Conclusion
+
+
+### Introduction
+
+Dans ce premier projet d'école d'ingénieur, il nous a été demandé de créer trois alimentations pour trois projets d'électronique différents.
+Notre but, était donc de créer et réaliser un PCB opérationnel qui alimentera en tension et courant les composants utiles à la conception de ces projets.
+Pour se faire, nous allons travailler sur un logiciel : Eagle 
+
+
 ### I) L'alimentation
 ##### A) Cahier des charges 
 
@@ -28,27 +56,39 @@ Nous avons donc répertorié tous les composants suivant leur datasheet
 
 - Capteur température 3,3V
                       <100mA
-                     
-                 
-##### B) Les piles 
+ 
+ Il a également fallu déterminer l'autonomie que devait avoir l'alimentation pour chaque projet. 
+ - 8h pour le travailleur isolé
+ - 10h pour le badge Alzeihmer
+ - 15h pour le composte
 
-L'avantage de notre projet actuel est que l'on a utilisé des piles non rechargeables qui nous délivraient les 6V voulus, tandis que les piles non rechargeables, elles ne peuvent délivrer que 1,2V chacune ce qui ne fera pas exactement 6V en tension d'entrée. Cependant, qui dit piles non rechargeables dis moins d'autonomie; ce qui ne coincidera pas avec les attentes de l'acheteur si l'on commercialise le projet.
+C'est avec ces renseignements que nous avons pu choisir les piles ou batteries utiles et adéquates.
+
+##### B) Piles et batterie
+
+L'avantage de notre projet actuel est que l'on a utilisé des piles non rechargeables qui nous délivraient les 6V voulus, tandis que les piles rechargeables, elles ne peuvent délivrer que 1,2V chacune ce qui ne fera pas exactement 6V en tension d'entrée. Cependant, qui dit piles non rechargeables dis moins d'autonomie; ce qui ne coincidera pas avec les attentes de l'acheteur si l'on commercialise le projet.
+
+12V pour plus d'autonomie
+
 
 ### II) Développement du PCB
 ##### A) Régulateur Buck
 ##### Pourquoi ? 
 
-Nous avons plusieurs composants à alimenter. Les deux tensions à délivrer sont le 5V et le 3,3V. 
-Pour cela, nous avions deux choix de régulateurs; soit un Buck (tension de sortie, du régulateur, abaissée) ou un régulateur Boost (le contraire; tension de sortie du régulateur augmentée). 
-Boost inverse la tension
-c’était plus simple. 
+Comme vu dans le cahier des charges, nous avons plusieurs composants à alimenter. Les deux tensions à délivrer sont le 5V et le 3,3V. 
+Pour cela, nous avions deux choix de régulateurs; soit un Buck (tension de sortie, du régulateur, abaissée) ou un régulateur Boost (le contraire; tension de sortie du régulateur augmentée, il inverse la tension). 
 
 Sachant que, pour le composte, la batterie délivre 12V, le choix du régulateur Buck était alors une évidence. 
-Nous avons, de plus, pris la décision de rester sur ce type de régulateur pour les deux autres projets même si nous pouvions utiliser un Boost. (tension d’entrée de 6V délivrée avec les piles). 
+Nous avons, de plus, pris la décision de rester sur ce type de régulateur pour les deux autres projets.
 
 Nous avons, donc, opté pour un MC34063A/E
-capable du Boost, du Buck, courant de sortie supérieur à 1,5mA, large plage de tension d’entrée (3V-40V), sortie (0,8V-18V)
-Moins cher, ampérage de sortie 1,5 A l’autre 3A. 
+Pourquoi ? 
+
+- courant de sortie supérieur à 1,5mA, 
+- large plage de tension d’entrée (3V-40V), sortie (0,8V-18V)
+- Moins cher
+- En stock
+- capable du Boost et du Buck (option en plus)
 
 
  ##### L'environnement
@@ -63,14 +103,18 @@ En se référant à la datasheet du régulateur.
 
 Détaillons chacun d’eux : 
 
-Un résistance Rsc de 0,33 Ohm . Celle-ci permet de contrôler le courant maximal arrivant dans la pin Switch. 
-Un condensateur C2 (100µF) polarisé ; filtrage de parasites 
-Un condensateur C1(470µF) polarisé; filtrage de tension de sortie
-Une bobine ( 220µH); filtrage de courant de sortie. *
+- Un résistance Rsc de 0,33 Ohm . Celle-ci permet de contrôler le courant maximal arrivant dans la pin Switch. 
+- Un condensateur C2 (100µF) polarisé ; filtrage de parasites 
+- Un condensateur C1(470µF) polarisé; filtrage de tension de sortie
+- Une bobine ( 220µH); filtrage de courant de sortie. *
 bobine en série et capa en parallèle = lissage 
-Un diode (40V) reliée à la masse, à la sortie de la switch. Elle agit comme une sécurité. En effet, si la tension dépasse 40V, alors tout passe par la diode et va à la masse. Cette valeur de tension peut paraître inatteignable de prime abord, car nous délivrons au maximum 12V en entrée, mais le On Off de la switch augmente la tension et peut atteindre ces 40V.
-Un condenstaur C3 (470pF) non polarisé; capa de synchronisation de charge et décharge du régulateur.
-2 résistances R1 et R2 associées en pont diviseur de tension, vont déterminées la tension de sortie du régulateur. En effet, lorsque l’on regarde l’intérieur du régulateur; nous avons un comparateur de 1,25V référence régulateur qui comparé avec la tension R1 et R2 agit sur la tension de sortie. 
+- Une diode (40V) reliée à la masse, à la sortie de la switch. Elle agit comme une sécurité. En effet, si la tension dépasse 40V, alors tout passe par la diode et va à la masse. Cette valeur de tension peut paraître inatteignable de prime abord, car nous délivrons au maximum 12V en entrée, mais le On Off de la switch augmente la tension et peut atteindre ces 40V.
+- Un condenstaur C3 (470pF) non polarisé; capa de synchronisation de charge et décharge du régulateur.
+- 2 résistances R1 et R2. L'association de ces deux résistances forme un pont diviseur de tension, (pont diviseur de tension = abaisser une tension sans consommer de puissance).
+A elles deux elles vont déterminer la tension de sortie du régulateur. En effet, lorsque l’on analyse “plus en profondeur” le régulateur en lui même, nous nous apercevons qu’il y un comparateur 1,25 tension de référence du régulateur. C’est cette comparaison qui va faire VOUT. 
+On doit agir sur R1 et R2 pour VOUT. 
+
+
 L’association de C2, C1 et la bobine permet au régulateur d’être le plus stable possible. 
 
 (Chaque valeur des composants est déterminée suivant la datasheet).  
@@ -131,32 +175,75 @@ Nous avons également choisi de mettre 3 pins dans le PCB. Une pin Masse, une pi
 
 Nous verrons plus tard, que lors de l'association sur le PCB de l'alimentation avec les autres modules (capteurs, lorawan...), la résistance nulle nous aura été bien utile pour vérifier le bon fonctionnement du régulateur Buck et ainsi résoudre quelques problèmes. 
 
+Les composants trouvés, les datasheets analysées et les points tests ajoutés, nous avons pu réaliser notre PCB sous Eagle. 
+
 ### III) Résultats:
-##### A) PCB de l’alimentation 
-En suivant la datasheet de chaque régulateur et avec quelques recherches, nous avons réalisé notre PCB sous Eagle et une fois reçu l’avons soudé.
+##### A) PCB de l’alimentation
+Il nous a été conseillé de réalisé notre PCB avec résistances en 0603 car pas de consommation de puissance et économie de place.
+Le PCB étant vérifié, nous avons pu lancer "la commande". Lorsque nous l'avons reçu, nous avons pu le souder en suivant le Board sous Eagle. 
 
 ![](images/PCB.png)
 
 En vert le régulateur BUCK
-
 En orange le régulateur linéaire
 
+Le PCB fini, nous avons pu passer à l'étape de vérification sous 6V et 12v de tension d'entrée. 
+##### B) Les résultats en 6V et 12V
 
-###### Nos erreurs : 
+Pour vérifier ces tensions nous nous sommes servi d'un multimètre pointé sur les 3pins du connecteur. 
+
+![](images/resultat6V.png)
+Nous avons bien les résultats attendus. Nous avons ensuite analysé ces résultats avec un oscilloscope. 
+
+##### C) Les résultats à l'oscilloscope
+
+Pour se faire, nous avons mis une sonde à la sortie du régulateur buck; soit l'entrée de la bobine; et une à la sortie de la bobine. 
+Nous avons obtenu : 
+![WhatsApp Image 2022-05-31 at 16 10 37](https://user-images.githubusercontent.com/102949845/172065405-e33e1acf-ea96-43d6-8cfd-f2a40335f568.jpeg)
+
+Le signal jaune est la réponse en sortie du régulateur avant le lissage de la bobine.C'est la retranscription même de l'effet de la pin Switch (il y a un petit dépassement; certainement dû à l'usage des piles)
+Le signal en violet est la réponse en sortie de la bobine. Nous voyons bien son effet sur le lissage du signal. 
+
+De plus, nous remarquons bien que nous avons les 5V en sortie souhaités. ( les deux signaux se superposent); Notre PCB fonctionne.  
+
+#### D) Les résultats du PCB de tout un projet
+
+Notre PCB étant opérationnel, nous avons pu l'insérer dans celui du projet "Travailleur isolé".
+Une fois commandé et soudé, nous avons vérifié que tout fonctionnait.
+
+Grand désarois quand nous avons vu que ce n'était pas le cas... :)
+En effet, les tensions de sorties n'étaient pas bonnes; 5V à la sortie du régulateur linéaire...
+
+C'est à ce moment là que la résistance nulle nous a été bien utile.
+En pouvant la dessouder, nous avons d'abord pu mesurer la tension de sortie du régulateur Buck indépendnat du reste du circuit. Cette tension était correcte. 
+Puis, nous avons vérifié qu'il n'y avait pas de court-circuit et l'avons re-soudée pour établir le lien entre les deux régulateurs. 
+
+Nous avons alors pris la tension de sortie du régulateur linéaire qui étonnement n'était pas à 3,3V mais à 5V. Après mainte recherches nous en avons conclu que le problème venait du microprocesseur qui avait brûlé le régulateur linéaire. 
+
+### IV) Remarques
+##### A) Les chiffres
+
+Nous avons chiffré le coût de fabrication de l'alimentation. 
+<img width="466" alt="cout" src="https://user-images.githubusercontent.com/102949845/172066609-23e45228-0632-41fa-9aba-6549fa944309.PNG">
+
+Ce qui revient la plus cher est donc les piles. Une solution pour y remédier 
+
+###### B) Nos erreurs : 
 
 Dans cette partie de rapport nous avons répertorié les quelques erreurs et remarques que nous avons faites lors du projet. 
 
 - Ne pas omettre le plan de masse sur Eagle
-- Prêter attention à la largeur des pistes car la machine de l’Ensea ne peut en faire des trop petites. C’est pourquoi le premier PCB n’était pas exploitable 
+- Prêter attention à la largeur des pistes car la machine de l’Ensea ne peut en faire des trop petites. C’est pourquoi le premier PCB n’était pas exploitable. 
 - Le via a proximité des pins SV1 n’était pas connecté au plan de masse; on a soudé un fil entre le via et celui-ci. 
 - Ne pas confondre Masse et Terre 
 - Ne pas confondre stabilité du régulateur Buck et linéarité du régulateur linéaire. 
 
-NB : Avoir de bons yeux pour souder les résistances en 0603 :) 
+NB : Avoir de bons yeux pour souder les résistances en 0603 :)
 
-##### B) résultat du 6V
+### Conclusion
 
-![](images/resultat6V.png)
+A ce jour, notre projet d'alimentation est encore incomplet. En effet, indépendemment de tous les autres composants ou capteurs, elle fonctionne mais lorsqu'on l'insère dans un PCB complet, quelques problèmes surviennent.
+Nous supposons que cela est dû aux autres composants qui consomment du courant, ou sont mal soudés. 
+Il aurait été interessant d'avoir plus de temps pour faire fonctionner les différents projets. 
 
-En alimentant notre PCB avec les 4 piles AAA, soit 6V, nous avons bien obtenu les tensions de sorties souhaitées. 
-##### C) résultat du 12V 
+Ce premier projet été très interessant car nous avons pu mettre à disposition nos différentes connaissances acquises. 
