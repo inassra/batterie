@@ -70,7 +70,7 @@ L'avantage de notre projet actuel est que l'on a utilisé des piles non recharge
 
 12V pour plus d'autonomie(contrainte de poids)
 
-NB:Il est possible d'utiliser des piles rechargeables qui pourront delivrer du 4,8V (4 * 1,2V vu qu'on utilise un boitier pour 4 piles) mais dans ce cas on est obligé d'utiliser un régulateur BOOST afin de faire augmenter la tension jusqu'à 5V.
+NB:Il est possible d'utiliser des piles rechargeables qui pourront delivrer du 4,8V (4 * 1,2V vu qu'on utilise un boitier pour 4 piles) mais dans ce cas on est obligé d'utiliser un régulateur BOOST afin de faire augmenter la tension jusqu'à 5V. Cette decision est possible mais pourra causer d'autres contraintes surtout que ce type de régulateur nécessite plus de composants ce qui veut dire que la partie alimentation va couter plus cher et va prendre plus d'espace ce qui n'est pas souhaiter pour le travailleur isolé ainsi que le badge alzheimer.
 ### II) Développement du PCB
 ##### A) Régulateur Buck
 ##### Pourquoi ? 
