@@ -226,8 +226,8 @@ Nous avons alors pris la tension de sortie du régulateur linéaire qui étonnem
 Nous avons chiffré le coût de fabrication de l'alimentation. 
 <img width="466" alt="cout" src="https://user-images.githubusercontent.com/102949845/172066609-23e45228-0632-41fa-9aba-6549fa944309.PNG">
 
-Ce qui revient la plus cher est donc les piles. Une solution pour y remédier 
-
+Ce qui revient la plus cher est donc les piles. Une solution pour y remédier ? 
+Nous aurions pu utiliser un régulateur Boost avec moins de piles et des rechargeables. Cependant, le régulateur Boost a besoin de plus de composants que le Buck, ce qui ne coincide pas avec le fait de réduire le budget, et ne répondra pas à la contrainte d'espace imposée par le cahier des charges du travailleur isolé et du badge Alzeihmer.  
 ###### B) Nos erreurs : 
 
 Dans cette partie de rapport nous avons répertorié les quelques erreurs et remarques que nous avons faites lors du projet. 
@@ -244,6 +244,6 @@ NB : Avoir de bons yeux pour souder les résistances en 0603 :)
 
 A ce jour, notre projet d'alimentation est encore incomplet. En effet, indépendemment de tous les autres composants ou capteurs, elle fonctionne mais lorsqu'on l'insère dans un PCB complet, quelques problèmes surviennent.
 Nous supposons que cela est dû aux autres composants qui consomment du courant, ou sont mal soudés. 
-Il aurait été interessant d'avoir plus de temps pour faire fonctionner les différents projets. 
+Il aurait été interessant d'avoir plus de temps pour chercher nos erreurs et ainsi faire fonctionner les différents projets. 
 
-Ce premier projet été très interessant car nous avons pu mettre à disposition nos différentes connaissances acquises. 
+Par ailleurs,ce premier projet a été pour nous l'occasion de mettre à disposition nos différentes connaissances acquises et de travailler en groupe en échangeant et régroupant nos idées. 
